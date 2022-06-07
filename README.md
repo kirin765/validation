@@ -1,4 +1,4 @@
-##validation 분리
+## validation 분리
 * 기존 validation 로직을 따로 분리
 * Spring에서 제공하는 Validator 사용
 * support, validate 메소드 지원

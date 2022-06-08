@@ -31,3 +31,6 @@
 * 요청 -> Item -> controller -> Item -> 응답 (지금까지 한 경우)
 * 요청 -> Form -> controller -> Item 새로 생성 -> 응답 (Form 으로 받을 경우)
 * Form을 통해 데이터를 받을 경우 검증시, groups를 사용하지 않아도 된다.
+
+## Bean Validation - HTTP 메시지 컨버터
+* @RequestBody를 통해 파싱된 경우도 @Validated 적용해 검증 가능

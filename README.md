@@ -15,3 +15,7 @@
 ## Bean Validation 스프링 적용
 * 스프링 validation 패키지를 implmentaion하면 저절로  
 * @Valid 등을 붙인 부분에 대해서 Global Validation이 동작
+
+## Bean Validation 에러 코드
+* properties에 등록하여 에러 메시지 사용 가능
+

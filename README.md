@@ -26,3 +26,8 @@
 ## Bean Validation groups
 * 상황에 따른 Bean Validation적용을 달리 할 수 있음
 * @Validation(groups = SaveCheck.class) 와 같이 적용
+
+## Form 전송 객체 분리 소개
+* 요청 -> Item -> controller -> Item -> 응답 (지금까지 한 경우)
+* 요청 -> Form -> controller -> Item 새로 생성 -> 응답 (Form 으로 받을 경우)
+* Form을 통해 데이터를 받을 경우 검증시, groups를 사용하지 않아도 된다.

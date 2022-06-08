@@ -22,3 +22,7 @@
 ## Bean Validation 오브젝트 오류
 * ScriptAssert를 통해 체크 가능
 * 그보다는 기존 ItemValidator의 자바 코드를 고치는 것이 좋음
+
+## Bean Validation groups
+* 상황에 따른 Bean Validation적용을 달리 할 수 있음
+* @Validation(groups = SaveCheck.class) 와 같이 적용

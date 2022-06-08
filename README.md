@@ -7,7 +7,11 @@
 * @Validated 을 컨트롤러 파라미터 앞에 붙여 간편히 사용가능
 * 애플리케이션 클래스에 getValidator() 메소드를 통해 모든 컨트롤러에서도 사용가능
 
-## Bean Validation
+## Bean Validation 시작
 * Item클래스의 변수들에 에노테이션을 붙여 검증을 수행
 * 더욱 간소화하여 검증수행
 * javax validator, 하이버네이트 validator를 사용
+
+## Bean Validation 스프링 적용
+* 스프링 validation 패키지를 implmentaion하면 저절로  
+* @Valid 등을 붙인 부분에 대해서 Global Validation이 동작

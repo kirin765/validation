@@ -19,3 +19,6 @@
 ## Bean Validation 에러 코드
 * properties에 등록하여 에러 메시지 사용 가능
 
+## Bean Validation 오브젝트 오류
+* ScriptAssert를 통해 체크 가능
+* 그보다는 기존 ItemValidator의 자바 코드를 고치는 것이 좋음

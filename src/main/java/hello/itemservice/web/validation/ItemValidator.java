@@ -1,6 +1,7 @@
 package hello.itemservice.web.validation;
 
 import hello.itemservice.domain.item.Item;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
@@ -8,6 +9,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.Validator;
 
+@Slf4j
 @Component
 public class ItemValidator implements Validator {
 
@@ -20,6 +22,15 @@ public class ItemValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Item item = (Item) target;
 
+        if (item.getPrice() != null && item.getQuantity() != null) {
+            int resultPrice = item.getPrice() * item.getQuantity();
+
+            log.info("resultPrice : " + resultPrice);
+            if(resultPrice < 10000) {
+                errors.reject("totalPriceMin", new Object[]{10000, resultPrice}, null);
+            }
+        }
+
         if(!StringUtils.hasText(item.getItemName())) {
             errors.rejectValue("itemName", "required");
         }
@@ -30,13 +41,7 @@ public class ItemValidator implements Validator {
             errors.rejectValue("quantity", "max", new Object[]{9999}, null);
         }
 
-        if (item.getPrice() != null && item.getQuantity() != null) {
-            int resultPrice = item.getPrice() * item.getQuantity();
 
-            if(resultPrice < 10000) {
-                errors.reject("totalPriceMin", new Object[]{10000, resultPrice}, null);
-            }
-        }
 
     }
 }
